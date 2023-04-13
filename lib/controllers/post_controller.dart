@@ -18,7 +18,7 @@ class PostController {
     try {
       await Repository.getHandler().handleRequest(Request(
         Action.insertAndSync,
-        rawQuery: query,
+        query,
         dto: post,
         args: [
           post.title,
@@ -37,7 +37,7 @@ class PostController {
     try {
       result = await Repository.getHandler().handleRequest(Request(
         Action.rawQuery,
-        rawQuery: query,
+        query,
       ));
     } catch (e) {
       log(e.toString());
@@ -55,7 +55,7 @@ class PostController {
       res = await Repository.getHandler().handleRequest(
         Request(
           Action.select,
-          rawQuery: query,
+          query,
           args: args,
         ),
       );
@@ -75,7 +75,7 @@ class PostController {
       res = await Repository.getHandler().handleRequest(
         Request(
           Action.select,
-          rawQuery: query,
+          query,
         ),
       );
     } catch (e) {
@@ -93,7 +93,7 @@ class PostController {
       res = await Repository.getHandler().handleRequest(
         Request(
           Action.select,
-          rawQuery: query,
+          query,
           args: [user.id],
         ),
       );
@@ -115,7 +115,7 @@ class PostController {
       await Repository.getHandler().handleRequest(
         Request(
           Action.updateAndSync,
-          rawQuery: query,
+          query,
           dto: post,
           args: [
             post.title,
@@ -140,7 +140,7 @@ class PostController {
       await Repository.getHandler().handleRequest(
         Request(
           Action.updateAndSync,
-          rawQuery: query,
+          query,
           dto: post,
           args: [
             post.id,

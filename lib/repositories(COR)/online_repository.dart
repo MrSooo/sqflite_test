@@ -22,18 +22,15 @@ class OnlineRepository extends AbstractRepository {
       String jsonString = '';
       switch (request.dto.runtimeType) {
         case User:
-          {
-            jsonString = jsonEncode(request.dto);
-            break;
-          }
+          jsonString = jsonEncode(request.dto);
+          break;
+
         case Post:
-          {
-            jsonString = jsonEncode(request.dto);
-            break;
-          }
+          jsonString = jsonEncode(request.dto);
+          break;
       }
       _logDBHandler.createLog(
-        request.rawQuery!,
+        request.rawQuery,
         jsonString,
       );
     } catch (e) {

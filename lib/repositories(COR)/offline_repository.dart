@@ -47,36 +47,36 @@ class OfflineRepository extends AbstractRepository with BaseDatabaseHelper {
 
   Future<int> doInsert(Request request) async {
     return await insertRaw(
-      request.rawQuery!,
+      request.rawQuery,
       request.args!,
     );
   }
 
   Future<int> doUpdate(Request request) async {
     return await updateRaw(
-      request.rawQuery!,
-      request.args!,
+      request.rawQuery,
+      request.args ?? [],
     );
   }
 
   Future<int> doDelete(Request request) async {
     return await deleteRaw(
-      request.rawQuery!,
-      request.args!,
+      request.rawQuery,
+      request.args ?? [],
     );
   }
 
   Future<dynamic> doSelect(Request request) async {
     var res = await selectRaw(
-      request.rawQuery!,
-      request.args,
+      request.rawQuery,
+      request.args ?? [],
     );
     return res;
   }
 
   Future<dynamic> doRawQuery(Request request) async {
     var res = await executeRaw(
-      request.rawQuery!,
+      request.rawQuery,
     );
     return res;
   }

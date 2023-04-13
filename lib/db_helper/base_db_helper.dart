@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:async';
 import 'package:path/path.dart' as p;
 import 'package:vts_sqflite/sqflite.dart';
@@ -16,6 +18,7 @@ mixin BaseDatabaseHelper {
       path,
       version: 1,
       onCreate: _onCreate,
+      password: '123456',
     );
   }
 

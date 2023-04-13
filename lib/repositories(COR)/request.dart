@@ -9,7 +9,7 @@ enum Action {
 
 class Request {
   final Action action;
-  final String? rawQuery;
+  final String rawQuery;
   final List? args;
   final dynamic dto;
 
@@ -22,8 +22,8 @@ class Request {
   get getDto => dto;
 
   Request(
-    this.action, {
-    this.rawQuery,
+    this.action,
+    this.rawQuery, {
     this.dto,
     this.args,
   });

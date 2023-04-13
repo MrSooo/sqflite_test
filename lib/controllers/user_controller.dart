@@ -17,7 +17,7 @@ class UserController {
       await Repository.getHandler().handleRequest(
         Request(
           Action.insertAndSync,
-          rawQuery: query,
+          query,
           dto: user,
           args: [
             user.name,
@@ -42,7 +42,7 @@ class UserController {
     try {
       result = await Repository.getHandler().handleRequest(Request(
         Action.rawQuery,
-        rawQuery: query,
+        query,
       ));
     } catch (e) {
       log(e.toString());
@@ -60,7 +60,7 @@ class UserController {
       res = await Repository.getHandler().handleRequest(
         Request(
           Action.select,
-          rawQuery: query,
+          query,
           args: args,
         ),
       );
@@ -82,7 +82,7 @@ class UserController {
       await Repository.getHandler().handleRequest(
         Request(
           Action.updateAndSync,
-          rawQuery: query,
+          query,
           dto: user,
           args: [
             user.name,
@@ -107,7 +107,7 @@ class UserController {
       await Repository.getHandler().handleRequest(
         Request(
           Action.updateAndSync,
-          rawQuery: query,
+          query,
           dto: user,
           args: [
             user.id,
